@@ -1,36 +1,41 @@
 import { Category, Product } from '@/types';
 
+// Generate placeholder image data URI
+const generatePlaceholder = (color: string, text: string) => {
+  return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='${color}'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='white'%3E${text}%3C/text%3E%3C/svg%3E`;
+};
+
 export const categories: Category[] = [
   {
     id: 'pooja',
     name: 'Pooja Stores',
-    image: 'https://images.unsplash.com/photo-1604608672516-f1b9b1a0e8c0?w=400&h=300&fit=crop',
+    image: generatePlaceholder('%23f59e0b', 'Pooja%20Stores'),
     subcategories: ['Agarbattis', 'Cotton']
   },
   {
     id: 'fruits',
     name: 'Fruits',
-    image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=400&h=300&fit=crop'
+    image: generatePlaceholder('%2310b981', 'Fruits')
   },
   {
     id: 'vegetables',
     name: 'Vegetables',
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=300&fit=crop'
+    image: generatePlaceholder('%2334d399', 'Vegetables')
   },
   {
     id: 'idols',
     name: 'Idols',
-    image: 'https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=400&h=300&fit=crop'
+    image: generatePlaceholder('%238b5cf6', 'Idols')
   },
   {
     id: 'flowers',
     name: 'Flowers',
-    image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&h=300&fit=crop'
+    image: generatePlaceholder('%23ec4899', 'Flowers')
   },
   {
     id: 'garlands',
     name: 'Garlands',
-    image: 'https://images.unsplash.com/photo-1515552726023-7125c8d07fb3?w=400&h=300&fit=crop'
+    image: generatePlaceholder('%23f97316', 'Garlands')
   }
 ];
 
@@ -40,7 +45,7 @@ export const products: Product[] = [
     id: 'p1',
     name: 'Cycle Pure Agarbatti',
     price: 45,
-    image: 'https://images.unsplash.com/photo-1604608672516-f1b9b1a0e8c0?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23f59e0b', 'Agarbatti'),
     category: 'pooja',
     subcategory: 'Agarbattis',
     unit: '100 sticks',
@@ -50,7 +55,7 @@ export const products: Product[] = [
     id: 'p2',
     name: 'Mangaldeep Agarbatti',
     price: 35,
-    image: 'https://images.unsplash.com/photo-1583314965950-cd54a8b6db84?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23f59e0b', 'Agarbatti'),
     category: 'pooja',
     subcategory: 'Agarbattis',
     unit: '75 sticks',
@@ -60,7 +65,7 @@ export const products: Product[] = [
     id: 'p3',
     name: 'Zed Black Agarbatti',
     price: 55,
-    image: 'https://images.unsplash.com/photo-1602524206684-c8d3c0e71d37?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23f59e0b', 'Agarbatti'),
     category: 'pooja',
     subcategory: 'Agarbattis',
     unit: '120 sticks',
@@ -72,7 +77,7 @@ export const products: Product[] = [
     id: 'p4',
     name: 'Pure Cotton Wicks',
     price: 25,
-    image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23fbbf24', 'Cotton'),
     category: 'pooja',
     subcategory: 'Cotton',
     unit: '100 pcs',
@@ -82,7 +87,7 @@ export const products: Product[] = [
     id: 'p5',
     name: 'Cotton Balls',
     price: 30,
-    image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23fbbf24', 'Cotton'),
     category: 'pooja',
     subcategory: 'Cotton',
     unit: '200g',
@@ -94,7 +99,7 @@ export const products: Product[] = [
     id: 'p6',
     name: 'Fresh Bananas',
     price: 40,
-    image: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23fde047', 'Bananas'),
     category: 'fruits',
     unit: '1 dozen',
     description: 'Fresh ripe bananas'
@@ -103,7 +108,7 @@ export const products: Product[] = [
     id: 'p7',
     name: 'Red Apples',
     price: 120,
-    image: 'https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23dc2626', 'Apples'),
     category: 'fruits',
     unit: '1 kg',
     description: 'Crisp and fresh apples'
@@ -112,7 +117,7 @@ export const products: Product[] = [
     id: 'p8',
     name: 'Sweet Mangoes',
     price: 180,
-    image: 'https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23fb923c', 'Mangoes'),
     category: 'fruits',
     unit: '1 kg',
     description: 'Seasonal sweet mangoes'
@@ -121,7 +126,7 @@ export const products: Product[] = [
     id: 'p9',
     name: 'Fresh Oranges',
     price: 80,
-    image: 'https://images.unsplash.com/photo-1582979512210-99b6a53386f9?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23f97316', 'Oranges'),
     category: 'fruits',
     unit: '1 kg',
     description: 'Juicy oranges'
@@ -130,7 +135,7 @@ export const products: Product[] = [
     id: 'p10',
     name: 'Green Grapes',
     price: 90,
-    image: 'https://images.unsplash.com/photo-1599819177331-4e9f02c6d13d?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%2384cc16', 'Grapes'),
     category: 'fruits',
     unit: '500g',
     description: 'Seedless green grapes'
@@ -139,7 +144,7 @@ export const products: Product[] = [
     id: 'p11',
     name: 'Pomegranate',
     price: 150,
-    image: 'https://images.unsplash.com/photo-1570039912-4a46d8f93391?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23be123c', 'Pomegranate'),
     category: 'fruits',
     unit: '1 kg',
     description: 'Fresh pomegranate'
@@ -150,7 +155,7 @@ export const products: Product[] = [
     id: 'p12',
     name: 'Fresh Tomatoes',
     price: 30,
-    image: 'https://images.unsplash.com/photo-1546470427-e26264be0b0d?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23dc2626', 'Tomatoes'),
     category: 'vegetables',
     unit: '500g',
     description: 'Farm fresh tomatoes'
@@ -159,7 +164,7 @@ export const products: Product[] = [
     id: 'p13',
     name: 'Green Capsicum',
     price: 40,
-    image: 'https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%2322c55e', 'Capsicum'),
     category: 'vegetables',
     unit: '250g',
     description: 'Fresh bell peppers'
@@ -168,7 +173,7 @@ export const products: Product[] = [
     id: 'p14',
     name: 'Potatoes',
     price: 25,
-    image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23a16207', 'Potatoes'),
     category: 'vegetables',
     unit: '1 kg',
     description: 'Quality potatoes'
@@ -177,7 +182,7 @@ export const products: Product[] = [
     id: 'p15',
     name: 'Fresh Onions',
     price: 35,
-    image: 'https://images.unsplash.com/photo-1508747703725-719777637510?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23a855f7', 'Onions'),
     category: 'vegetables',
     unit: '1 kg',
     description: 'Fresh red onions'
@@ -186,7 +191,7 @@ export const products: Product[] = [
     id: 'p16',
     name: 'Cauliflower',
     price: 45,
-    image: 'https://images.unsplash.com/photo-1568584711271-61edd2b6d5ce?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23f5f5f4', 'Cauliflower'),
     category: 'vegetables',
     unit: '1 pc',
     description: 'Fresh cauliflower'
@@ -195,7 +200,7 @@ export const products: Product[] = [
     id: 'p17',
     name: 'Green Peas',
     price: 60,
-    image: 'https://images.unsplash.com/photo-1452252717670-5cc3f4d52b3e?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%2316a34a', 'Peas'),
     category: 'vegetables',
     unit: '250g',
     description: 'Fresh green peas'
@@ -206,7 +211,7 @@ export const products: Product[] = [
     id: 'p18',
     name: 'Ganesha Idol',
     price: 250,
-    image: 'https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23f59e0b', 'Ganesha'),
     category: 'idols',
     unit: '6 inch',
     description: 'Beautiful brass Ganesha idol'
@@ -215,7 +220,7 @@ export const products: Product[] = [
     id: 'p19',
     name: 'Lakshmi Idol',
     price: 300,
-    image: 'https://images.unsplash.com/photo-1582230999221-f50cfa649a1d?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23f59e0b', 'Lakshmi'),
     category: 'idols',
     unit: '8 inch',
     description: 'Brass Lakshmi idol'
@@ -224,7 +229,7 @@ export const products: Product[] = [
     id: 'p20',
     name: 'Krishna Idol',
     price: 280,
-    image: 'https://images.unsplash.com/photo-1595435742656-5272d0b3e430?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%232563eb', 'Krishna'),
     category: 'idols',
     unit: '7 inch',
     description: 'Decorative Krishna idol'
@@ -233,7 +238,7 @@ export const products: Product[] = [
     id: 'p21',
     name: 'Shiva Linga',
     price: 200,
-    image: 'https://images.unsplash.com/photo-1582142306909-195724d33e1e?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%236b7280', 'Shiva'),
     category: 'idols',
     unit: '5 inch',
     description: 'Marble Shiva Linga'
@@ -244,7 +249,7 @@ export const products: Product[] = [
     id: 'p22',
     name: 'Fresh Roses',
     price: 50,
-    image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23f43f5e', 'Roses'),
     category: 'flowers',
     unit: '20 pcs',
     description: 'Fresh red roses'
@@ -253,7 +258,7 @@ export const products: Product[] = [
     id: 'p23',
     name: 'Jasmine Flowers',
     price: 30,
-    image: 'https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23fef3c7', 'Jasmine'),
     category: 'flowers',
     unit: '50g',
     description: 'Fragrant jasmine'
@@ -262,7 +267,7 @@ export const products: Product[] = [
     id: 'p24',
     name: 'Marigold Flowers',
     price: 40,
-    image: 'https://images.unsplash.com/photo-1563350006-d8f68e1e50b3?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23fb923c', 'Marigold'),
     category: 'flowers',
     unit: '100g',
     description: 'Orange marigolds'
@@ -271,7 +276,7 @@ export const products: Product[] = [
     id: 'p25',
     name: 'Lotus Flowers',
     price: 80,
-    image: 'https://images.unsplash.com/photo-1508766206392-8e638d7290f7?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23ec4899', 'Lotus'),
     category: 'flowers',
     unit: '5 pcs',
     description: 'Fresh lotus flowers'
@@ -280,7 +285,7 @@ export const products: Product[] = [
     id: 'p26',
     name: 'Hibiscus Flowers',
     price: 25,
-    image: 'https://images.unsplash.com/photo-1589122925089-0319e7f61fdd?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23dc2626', 'Hibiscus'),
     category: 'flowers',
     unit: '10 pcs',
     description: 'Red hibiscus'
@@ -291,7 +296,7 @@ export const products: Product[] = [
     id: 'p27',
     name: 'Rose Garland',
     price: 150,
-    image: 'https://images.unsplash.com/photo-1515552726023-7125c8d07fb3?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23f43f5e', 'Rose%20Garland'),
     category: 'garlands',
     unit: '3 ft',
     description: 'Fresh rose garland'
@@ -300,7 +305,7 @@ export const products: Product[] = [
     id: 'p28',
     name: 'Jasmine Garland',
     price: 100,
-    image: 'https://images.unsplash.com/photo-1556314073-531d94a4c569?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23fef3c7', 'Jasmine%20Garland'),
     category: 'garlands',
     unit: '2 ft',
     description: 'Fragrant jasmine garland'
@@ -309,7 +314,7 @@ export const products: Product[] = [
     id: 'p29',
     name: 'Marigold Garland',
     price: 120,
-    image: 'https://images.unsplash.com/photo-1604950497224-a1df1151a04c?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23fb923c', 'Marigold%20Garland'),
     category: 'garlands',
     unit: '4 ft',
     description: 'Traditional marigold garland'
@@ -318,7 +323,7 @@ export const products: Product[] = [
     id: 'p30',
     name: 'Mixed Flower Garland',
     price: 180,
-    image: 'https://images.unsplash.com/photo-1529610523989-c42f9c1e5b23?w=300&h=300&fit=crop',
+    image: generatePlaceholder('%23a855f7', 'Mixed%20Garland'),
     category: 'garlands',
     unit: '3 ft',
     description: 'Beautiful mixed flower garland'
