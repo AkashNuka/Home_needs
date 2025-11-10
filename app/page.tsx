@@ -4,7 +4,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { categories, products } from '@/data/products';
 import CategoryCard from '@/components/CategoryCard';
 import ProductCard from '@/components/ProductCard';
-import { ChevronDown } from 'lucide-react';
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<string>('');
@@ -57,85 +56,92 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Categories Section */}
+      {/* Main Content with Sidebar */}
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <h2 className="text-2xl font-bold mb-6">Shop by Category</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {categories.map((category) => (
-            <CategoryCard
-              key={category.id}
-              category={category}
-              onSelect={handleCategorySelect}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Products Section */}
-      <div className="max-w-7xl mx-auto px-4 pb-12">
-        {categories.map((category) => {
-          const categoryProducts = getFilteredProducts(category.id);
-          
-          if (categoryProducts.length === 0) return null;
-
-          return (
-            <section
-              key={category.id}
-              ref={(el) => {
-                if (el) categoryRefs.current[category.id] = el;
-              }}
-              className="mb-12"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <h2 className="text-2xl font-bold">{category.name}</h2>
-                <span className="text-sm text-gray-500">
-                  ({categoryProducts.length} items)
-                </span>
-              </div>
-
-              {/* Subcategories if available */}
-              {category.subcategories && category.subcategories.length > 0 && (
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-2">
-                    <button
-                      onClick={() => setSelectedSubcategory('')}
-                      className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                        selectedSubcategory === ''
-                          ? 'bg-primary-500 text-white'
-                          : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
-                      }`}
-                    >
-                      All
-                    </button>
-                    {category.subcategories.map((sub) => (
-                      <button
-                        key={sub}
-                        onClick={() => setSelectedSubcategory(sub)}
-                        className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                          selectedSubcategory === sub
-                            ? 'bg-primary-500 text-white'
-                            : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
-                        }`}
-                      >
-                        {sub}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Products Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                {(selectedSubcategory && category.subcategories
-                  ? getFilteredProducts(category.id, selectedSubcategory)
-                  : categoryProducts
-                ).map((product) => (
-                  <ProductCard key={product.id} product={product} />
+        <div className="flex flex-col lg:flex-row gap-6">
+          {/* Left Sidebar - Categories */}
+          <aside className="lg:w-64 flex-shrink-0">
+            <div className="lg:sticky lg:top-20">
+              <h2 className="text-xl font-bold mb-4 px-2">Shop by Category</h2>
+              <div className="grid grid-cols-2 lg:grid-cols-1 gap-3">
+                {categories.map((category) => (
+                  <CategoryCard
+                    key={category.id}
+                    category={category}
+                    onSelect={handleCategorySelect}
+                  />
                 ))}
               </div>
-            </section>
-          );
-        })}
+            </div>
+          </aside>
+
+          {/* Main Content - Products */}
+          <div className="flex-1">
+            {categories.map((category) => {
+              const categoryProducts = getFilteredProducts(category.id);
+              
+              if (categoryProducts.length === 0) return null;
+
+              return (
+                <section
+                  key={category.id}
+                  ref={(el) => {
+                    if (el) categoryRefs.current[category.id] = el;
+                  }}
+                  className="mb-12"
+                >
+                  <div className="flex items-center gap-3 mb-6">
+                    <h2 className="text-2xl font-bold">{category.name}</h2>
+                    <span className="text-sm text-gray-500">
+                      ({categoryProducts.length} items)
+                    </span>
+                  </div>
+
+                  {/* Subcategories if available */}
+                  {category.subcategories && category.subcategories.length > 0 && (
+                    <div className="mb-6">
+                      <div className="flex flex-wrap gap-2">
+                        <button
+                          onClick={() => setSelectedSubcategory('')}
+                          className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                            selectedSubcategory === ''
+                              ? 'bg-primary-500 text-white'
+                              : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+                          }`}
+                        >
+                          All
+                        </button>
+                        {category.subcategories.map((sub) => (
+                          <button
+                            key={sub}
+                            onClick={() => setSelectedSubcategory(sub)}
+                            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                              selectedSubcategory === sub
+                                ? 'bg-primary-500 text-white'
+                                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+                            }`}
+                          >
+                            {sub}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Products Grid */}
+                  <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {(selectedSubcategory && category.subcategories
+                      ? getFilteredProducts(category.id, selectedSubcategory)
+                      : categoryProducts
+                    ).map((product) => (
+                      <ProductCard key={product.id} product={product} />
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       {/* Footer */}
