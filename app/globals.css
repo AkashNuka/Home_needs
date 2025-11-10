@@ -61,3 +61,13 @@ body {
 .cart-slide-in {
   animation: slideIn 0.3s ease-out;
 }
+
+/* Hide scrollbar for mobile category bar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,41 +1,36 @@
 import { Category, Product } from '@/types';
 
-// Generate placeholder image data URI
-const generatePlaceholder = (color: string, text: string) => {
-  return `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect width='400' height='300' fill='${color}'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='24' fill='white'%3E${text}%3C/text%3E%3C/svg%3E`;
-};
-
 export const categories: Category[] = [
   {
     id: 'pooja',
     name: 'Pooja Stores',
-    image: generatePlaceholder('%23f59e0b', 'Pooja%20Stores'),
+    image: 'https://picsum.photos/seed/pooja/400/300',
     subcategories: ['Agarbattis', 'Cotton']
   },
   {
     id: 'fruits',
     name: 'Fruits',
-    image: generatePlaceholder('%2310b981', 'Fruits')
+    image: 'https://picsum.photos/seed/fruits/400/300'
   },
   {
     id: 'vegetables',
     name: 'Vegetables',
-    image: generatePlaceholder('%2334d399', 'Vegetables')
+    image: 'https://picsum.photos/seed/vegetables/400/300'
   },
   {
     id: 'idols',
     name: 'Idols',
-    image: generatePlaceholder('%238b5cf6', 'Idols')
+    image: 'https://picsum.photos/seed/idols/400/300'
   },
   {
     id: 'flowers',
     name: 'Flowers',
-    image: generatePlaceholder('%23ec4899', 'Flowers')
+    image: 'https://picsum.photos/seed/flowers/400/300'
   },
   {
     id: 'garlands',
     name: 'Garlands',
-    image: generatePlaceholder('%23f97316', 'Garlands')
+    image: 'https://picsum.photos/seed/garlands/400/300'
   }
 ];
 
@@ -45,7 +40,7 @@ export const products: Product[] = [
     id: 'p1',
     name: 'Cycle Pure Agarbatti',
     price: 45,
-    image: generatePlaceholder('%23f59e0b', 'Agarbatti'),
+    image: 'https://picsum.photos/seed/agarbatti1/400/400',
     category: 'pooja',
     subcategory: 'Agarbattis',
     unit: '100 sticks',
@@ -55,7 +50,7 @@ export const products: Product[] = [
     id: 'p2',
     name: 'Mangaldeep Agarbatti',
     price: 35,
-    image: generatePlaceholder('%23f59e0b', 'Agarbatti'),
+    image: 'https://picsum.photos/seed/agarbatti2/400/400',
     category: 'pooja',
     subcategory: 'Agarbattis',
     unit: '75 sticks',
@@ -65,7 +60,7 @@ export const products: Product[] = [
     id: 'p3',
     name: 'Zed Black Agarbatti',
     price: 55,
-    image: generatePlaceholder('%23f59e0b', 'Agarbatti'),
+    image: 'https://picsum.photos/seed/agarbatti3/400/400',
     category: 'pooja',
     subcategory: 'Agarbattis',
     unit: '120 sticks',
@@ -77,7 +72,7 @@ export const products: Product[] = [
     id: 'p4',
     name: 'Pure Cotton Wicks',
     price: 25,
-    image: generatePlaceholder('%23fbbf24', 'Cotton'),
+    image: 'https://picsum.photos/seed/cotton1/400/400',
     category: 'pooja',
     subcategory: 'Cotton',
     unit: '100 pcs',
@@ -87,7 +82,7 @@ export const products: Product[] = [
     id: 'p5',
     name: 'Cotton Balls',
     price: 30,
-    image: generatePlaceholder('%23fbbf24', 'Cotton'),
+    image: 'https://picsum.photos/seed/cotton2/400/400',
     category: 'pooja',
     subcategory: 'Cotton',
     unit: '200g',
@@ -99,7 +94,7 @@ export const products: Product[] = [
     id: 'p6',
     name: 'Fresh Bananas',
     price: 40,
-    image: generatePlaceholder('%23fde047', 'Bananas'),
+    image: 'https://picsum.photos/seed/banana/400/400',
     category: 'fruits',
     unit: '1 dozen',
     description: 'Fresh ripe bananas'
@@ -108,7 +103,7 @@ export const products: Product[] = [
     id: 'p7',
     name: 'Red Apples',
     price: 120,
-    image: generatePlaceholder('%23dc2626', 'Apples'),
+    image: 'https://picsum.photos/seed/apple/400/400',
     category: 'fruits',
     unit: '1 kg',
     description: 'Crisp and fresh apples'
@@ -117,7 +112,7 @@ export const products: Product[] = [
     id: 'p8',
     name: 'Sweet Mangoes',
     price: 180,
-    image: generatePlaceholder('%23fb923c', 'Mangoes'),
+    image: 'https://picsum.photos/seed/mango/400/400',
     category: 'fruits',
     unit: '1 kg',
     description: 'Seasonal sweet mangoes'
@@ -126,7 +121,7 @@ export const products: Product[] = [
     id: 'p9',
     name: 'Fresh Oranges',
     price: 80,
-    image: generatePlaceholder('%23f97316', 'Oranges'),
+    image: 'https://picsum.photos/seed/orange/400/400',
     category: 'fruits',
     unit: '1 kg',
     description: 'Juicy oranges'
@@ -135,7 +130,7 @@ export const products: Product[] = [
     id: 'p10',
     name: 'Green Grapes',
     price: 90,
-    image: generatePlaceholder('%2384cc16', 'Grapes'),
+    image: 'https://picsum.photos/seed/grapes/400/400',
     category: 'fruits',
     unit: '500g',
     description: 'Seedless green grapes'
@@ -144,7 +139,7 @@ export const products: Product[] = [
     id: 'p11',
     name: 'Pomegranate',
     price: 150,
-    image: generatePlaceholder('%23be123c', 'Pomegranate'),
+    image: 'https://picsum.photos/seed/pomegranate/400/400',
     category: 'fruits',
     unit: '1 kg',
     description: 'Fresh pomegranate'
@@ -155,7 +150,7 @@ export const products: Product[] = [
     id: 'p12',
     name: 'Fresh Tomatoes',
     price: 30,
-    image: generatePlaceholder('%23dc2626', 'Tomatoes'),
+    image: 'https://picsum.photos/seed/tomato/400/400',
     category: 'vegetables',
     unit: '500g',
     description: 'Farm fresh tomatoes'
@@ -164,7 +159,7 @@ export const products: Product[] = [
     id: 'p13',
     name: 'Green Capsicum',
     price: 40,
-    image: generatePlaceholder('%2322c55e', 'Capsicum'),
+    image: 'https://picsum.photos/seed/capsicum/400/400',
     category: 'vegetables',
     unit: '250g',
     description: 'Fresh bell peppers'
@@ -173,7 +168,7 @@ export const products: Product[] = [
     id: 'p14',
     name: 'Potatoes',
     price: 25,
-    image: generatePlaceholder('%23a16207', 'Potatoes'),
+    image: 'https://picsum.photos/seed/potato/400/400',
     category: 'vegetables',
     unit: '1 kg',
     description: 'Quality potatoes'
@@ -182,7 +177,7 @@ export const products: Product[] = [
     id: 'p15',
     name: 'Fresh Onions',
     price: 35,
-    image: generatePlaceholder('%23a855f7', 'Onions'),
+    image: 'https://picsum.photos/seed/onion/400/400',
     category: 'vegetables',
     unit: '1 kg',
     description: 'Fresh red onions'
@@ -191,7 +186,7 @@ export const products: Product[] = [
     id: 'p16',
     name: 'Cauliflower',
     price: 45,
-    image: generatePlaceholder('%23f5f5f4', 'Cauliflower'),
+    image: 'https://picsum.photos/seed/cauliflower/400/400',
     category: 'vegetables',
     unit: '1 pc',
     description: 'Fresh cauliflower'
@@ -200,7 +195,7 @@ export const products: Product[] = [
     id: 'p17',
     name: 'Green Peas',
     price: 60,
-    image: generatePlaceholder('%2316a34a', 'Peas'),
+    image: 'https://picsum.photos/seed/peas/400/400',
     category: 'vegetables',
     unit: '250g',
     description: 'Fresh green peas'
@@ -211,7 +206,7 @@ export const products: Product[] = [
     id: 'p18',
     name: 'Ganesha Idol',
     price: 250,
-    image: generatePlaceholder('%23f59e0b', 'Ganesha'),
+    image: 'https://picsum.photos/seed/ganesha/400/400',
     category: 'idols',
     unit: '6 inch',
     description: 'Beautiful brass Ganesha idol'
@@ -220,7 +215,7 @@ export const products: Product[] = [
     id: 'p19',
     name: 'Lakshmi Idol',
     price: 300,
-    image: generatePlaceholder('%23f59e0b', 'Lakshmi'),
+    image: 'https://picsum.photos/seed/lakshmi/400/400',
     category: 'idols',
     unit: '8 inch',
     description: 'Brass Lakshmi idol'
@@ -229,7 +224,7 @@ export const products: Product[] = [
     id: 'p20',
     name: 'Krishna Idol',
     price: 280,
-    image: generatePlaceholder('%232563eb', 'Krishna'),
+    image: 'https://picsum.photos/seed/krishna/400/400',
     category: 'idols',
     unit: '7 inch',
     description: 'Decorative Krishna idol'
@@ -238,7 +233,7 @@ export const products: Product[] = [
     id: 'p21',
     name: 'Shiva Linga',
     price: 200,
-    image: generatePlaceholder('%236b7280', 'Shiva'),
+    image: 'https://picsum.photos/seed/shiva/400/400',
     category: 'idols',
     unit: '5 inch',
     description: 'Marble Shiva Linga'
@@ -249,7 +244,7 @@ export const products: Product[] = [
     id: 'p22',
     name: 'Fresh Roses',
     price: 50,
-    image: generatePlaceholder('%23f43f5e', 'Roses'),
+    image: 'https://picsum.photos/seed/rose/400/400',
     category: 'flowers',
     unit: '20 pcs',
     description: 'Fresh red roses'
@@ -258,7 +253,7 @@ export const products: Product[] = [
     id: 'p23',
     name: 'Jasmine Flowers',
     price: 30,
-    image: generatePlaceholder('%23fef3c7', 'Jasmine'),
+    image: 'https://picsum.photos/seed/jasmine/400/400',
     category: 'flowers',
     unit: '50g',
     description: 'Fragrant jasmine'
@@ -267,7 +262,7 @@ export const products: Product[] = [
     id: 'p24',
     name: 'Marigold Flowers',
     price: 40,
-    image: generatePlaceholder('%23fb923c', 'Marigold'),
+    image: 'https://picsum.photos/seed/marigold/400/400',
     category: 'flowers',
     unit: '100g',
     description: 'Orange marigolds'
@@ -276,7 +271,7 @@ export const products: Product[] = [
     id: 'p25',
     name: 'Lotus Flowers',
     price: 80,
-    image: generatePlaceholder('%23ec4899', 'Lotus'),
+    image: 'https://picsum.photos/seed/lotus/400/400',
     category: 'flowers',
     unit: '5 pcs',
     description: 'Fresh lotus flowers'
@@ -285,7 +280,7 @@ export const products: Product[] = [
     id: 'p26',
     name: 'Hibiscus Flowers',
     price: 25,
-    image: generatePlaceholder('%23dc2626', 'Hibiscus'),
+    image: 'https://picsum.photos/seed/hibiscus/400/400',
     category: 'flowers',
     unit: '10 pcs',
     description: 'Red hibiscus'
@@ -296,7 +291,7 @@ export const products: Product[] = [
     id: 'p27',
     name: 'Rose Garland',
     price: 150,
-    image: generatePlaceholder('%23f43f5e', 'Rose%20Garland'),
+    image: 'https://picsum.photos/seed/rosegarland/400/400',
     category: 'garlands',
     unit: '3 ft',
     description: 'Fresh rose garland'
@@ -305,7 +300,7 @@ export const products: Product[] = [
     id: 'p28',
     name: 'Jasmine Garland',
     price: 100,
-    image: generatePlaceholder('%23fef3c7', 'Jasmine%20Garland'),
+    image: 'https://picsum.photos/seed/jasminegarland/400/400',
     category: 'garlands',
     unit: '2 ft',
     description: 'Fragrant jasmine garland'
@@ -314,7 +309,7 @@ export const products: Product[] = [
     id: 'p29',
     name: 'Marigold Garland',
     price: 120,
-    image: generatePlaceholder('%23fb923c', 'Marigold%20Garland'),
+    image: 'https://picsum.photos/seed/marigoldgarland/400/400',
     category: 'garlands',
     unit: '4 ft',
     description: 'Traditional marigold garland'
@@ -323,7 +318,7 @@ export const products: Product[] = [
     id: 'p30',
     name: 'Mixed Flower Garland',
     price: 180,
-    image: generatePlaceholder('%23a855f7', 'Mixed%20Garland'),
+    image: 'https://picsum.photos/seed/mixedgarland/400/400',
     category: 'garlands',
     unit: '3 ft',
     description: 'Beautiful mixed flower garland'
