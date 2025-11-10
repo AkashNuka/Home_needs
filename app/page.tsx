@@ -56,14 +56,44 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Mobile Category Bar - Sticky */}
+      <div className="sticky top-16 z-30 bg-white border-b border-gray-200 lg:hidden">
+        <div className="px-4 py-3">
+          <div className="flex gap-3 overflow-x-auto no-scrollbar">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => handleCategorySelect(category.id)}
+                className={`flex-shrink-0 flex flex-col items-center gap-1 p-2 rounded-lg transition-colors ${
+                  selectedCategory === category.id
+                    ? 'bg-primary-50 border-2 border-primary-500'
+                    : 'bg-gray-50 border border-gray-200'
+                }`}
+              >
+                <div className="w-14 h-14 rounded-full overflow-hidden">
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <span className="text-xs font-medium text-center whitespace-nowrap">
+                  {category.name}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Main Content with Sidebar */}
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-6">
-          {/* Left Sidebar - Categories */}
-          <aside className="lg:w-64 flex-shrink-0">
+          {/* Left Sidebar - Categories (Desktop Only) */}
+          <aside className="hidden lg:block lg:w-64 flex-shrink-0">
             <div className="lg:sticky lg:top-20">
               <h2 className="text-xl font-bold mb-4 px-2">Shop by Category</h2>
-              <div className="grid grid-cols-2 lg:grid-cols-1 gap-3">
+              <div className="grid grid-cols-1 gap-3">
                 {categories.map((category) => (
                   <CategoryCard
                     key={category.id}
